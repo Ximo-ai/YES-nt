@@ -22,6 +22,11 @@ let gfx = [
         name: "Gigabyte GeForce GT 1030 OC 2GB GDDR5",
         price: 394.29,
     },
+    {
+        id: 5,
+        name: "Turbo Bite 1927437",
+        price: 21.37,
+    },
 ]
 
 
@@ -60,10 +65,28 @@ let cpu = [
         price: 8973
     },
 ]
+
+let Ram = [
+    {
+        id: 1,
+        name: "Corsair Vengeance RGB Pro 32GB (2x16GB) DDR4 3200",
+        price: 134.80
+    },
+    {
+        id: 2,
+        name: "Crucial 16GB Kit (8GBx2) DDR3/DDR3L 1600 MT/S",
+        price: 300
+    },
+    {
+        id: 3,
+        name: "Corsair Vengeance RGB PRO 32GB (2x16GB) DDR4 3200",
+        price: 20.13
+    },
+]
 var cart = [
     {
         name: 'mainboard',
-        price: 0
+        price:'0'
     },
     {
         name:'cpu',
@@ -72,6 +95,11 @@ var cart = [
 
     {
         name:'gfx',
+        price:'0'
+    },
+
+    {
+        name:'Ram',
         price:'0'
     },
 
@@ -94,6 +122,7 @@ function SelectedItemValue(SelectId){
     const summaryCpu = document.getElementById("summaryCpu");
     const summaryMb = document.getElementById("summaryMb");
     const summaryGpu = document. getElementById("summaryGpu");
+    const summaryRam = document. getElementById("summaryRam");
 
     if (SelectId == "cpu") {
         summaryCpu.innerHTML = cpu[strAtt - 1].name + " " + cpu[strAtt - 1].price + "zł"
@@ -110,6 +139,11 @@ function SelectedItemValue(SelectId){
         summaryGpu.innerHTML = gfx[strAtt - 1].name + " " + gfx[strAtt - 1].price + "zł"
         cart[2].price = gfx[strAtt - 1].price
         cart[2].name = gfx[strAtt - 1].name
+    }
+    else if (SelectId == "Ram"){
+        summaryGpu.innerHTML = Ram[strAtt - 1].name + " " + Ram[strAtt - 1].price + "zł"
+        cart[2].price = Ram[strAtt - 1].price
+        cart[2].name = Ram[strAtt - 1].name
     }
     else
     {}
@@ -131,6 +165,10 @@ for (let i=0; i<gfx.length; i++){
 for (let i=0; i< cpu.length; i++){
     addOpt("cpu", cpu[i].id, cpu[i].name)
 
+}
+
+for (let i=0; i< Ram.length; i++){
+    addOpt("Ram", Ram[i].id, Ram[i].name)
 
 }
 
