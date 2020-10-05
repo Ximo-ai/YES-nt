@@ -52,17 +52,20 @@ let cpu = [
     {
         id: 1,
         name: "Intel i-7 2400k",
-        price: 1600
+        price: 1600,
+        Socket: 827
     },
     {
         id: 2,
         name: "Intel Ryzen 5",
-        price: 399
+        price: 399,
+        Socket: 997
     },
     {
         id: 3,
         name: "Bosch core t-0",
-        price: 8973
+        price: 8973,
+        Socket: 2137
     },
 ]
 
@@ -83,6 +86,42 @@ let Ram = [
         price: 20.13
     },
 ]
+
+let Power = [
+    {
+        id: 1,
+        name: "SeaSonic Focus GX-550W (FOCUS-GX-550)",
+        price: 635.80
+    },
+    {
+        id: 2,
+        name: "Corsair TXM 850W (CP-9020130-EU)",
+        price: 128
+    },
+    {
+        id: 3,
+        name: "Corsair RM650x 650W (CP-9020178-EU)",
+        price: 2137
+    },
+]
+
+let Case = [
+    {
+        id: 1,
+        name: "Obudowa be quiet! DArk Bas Pro 900 V2 (BGW15)",
+        price: 1288.23
+    },
+    {
+        id: 2,
+        name: "Obudowa Asus ROG Strix Helios GX601 (90DC0020-B39000)",
+        price: 1674.23
+    },
+    {
+        id: 3,
+        name: "Obudowa Thermaltake Core P5 Tempered Glass Edition",
+        price: 2178436.67
+    },
+]
 var cart = [
     {
         name: 'mainboard',
@@ -90,7 +129,8 @@ var cart = [
     },
     {
         name:'cpu',
-        price:'0'
+        price:'0',
+        Socket: '0'
     },
 
     {
@@ -100,6 +140,16 @@ var cart = [
 
     {
         name:'Ram',
+        price:'0'
+    },
+
+    {
+        name:'Case',
+        price:'0'
+    },
+
+    {
+        name:'Power',
         price:'0'
     },
 
@@ -123,11 +173,14 @@ function SelectedItemValue(SelectId){
     const summaryMb = document.getElementById("summaryMb");
     const summaryGpu = document. getElementById("summaryGpu");
     const summaryRam = document. getElementById("summaryRam");
+    const summaryCase = document. getElementById("summaryPower");
+    const summaryPower = document. getElementById("summaryCase");
 
     if (SelectId == "cpu") {
-        summaryCpu.innerHTML = cpu[strAtt - 1].name + " " + cpu[strAtt - 1].price + "zł"
+        summaryCpu.innerHTML = cpu[strAtt - 1].name + " " + cpu[strAtt - 1].price + "zł" + " " + "Socket:" + " " + cpu[strAtt - 1].Socket
         cart[1].price = cpu[strAtt - 1].price
         cart[1].name = cpu[strAtt - 1].name
+        cart[1].Socket = cpu[strAtt - 1].Socket
     }
     else if (SelectId == "mb") {
         summaryMb.innerHTML = mb[strAtt - 1].name + " " + mb[strAtt - 1].price + "zł"
@@ -141,9 +194,21 @@ function SelectedItemValue(SelectId){
         cart[2].name = gfx[strAtt - 1].name
     }
     else if (SelectId == "Ram"){
-        summaryGpu.innerHTML = Ram[strAtt - 1].name + " " + Ram[strAtt - 1].price + "zł"
+        summaryRam.innerHTML = Ram[strAtt - 1].name + " " + Ram[strAtt - 1].price + "zł"
         cart[2].price = Ram[strAtt - 1].price
         cart[2].name = Ram[strAtt - 1].name
+    }
+
+    else if (SelectId == "Case"){
+        summaryCase.innerHTML = Case[strAtt - 1].name + " " + Case[strAtt - 1].price + "zł"
+        cart[2].price = Case[strAtt - 1].price
+        cart[2].name = Case[strAtt - 1].name
+    }
+
+    else if (SelectId == "Power"){
+        summaryPower.innerHTML = Power[strAtt - 1].name + " " + Power[strAtt - 1].price + "zł"
+        cart[2].price = Power[strAtt - 1].price
+        cart[2].name = Power[strAtt - 1].name
     }
     else
     {}
@@ -169,6 +234,16 @@ for (let i=0; i< cpu.length; i++){
 
 for (let i=0; i< Ram.length; i++){
     addOpt("Ram", Ram[i].id, Ram[i].name)
+
+}
+
+for (let i=0; i< Power.length; i++){
+    addOpt("Power", Power[i].id, Power[i].name)
+
+}
+
+for (let i=0; i< Case.length; i++){
+    addOpt("Case", Case[i].id, Case[i].name)
 
 }
 

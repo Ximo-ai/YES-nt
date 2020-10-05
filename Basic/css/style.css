@@ -18,6 +18,6 @@ body {
 
 }
 
-select#mb, select#gpu, select#cpu, select#Ram {
+select#mb, select#gpu, select#cpu, select#Ram, select#Case, select#Power {
     font-size: 0.5em;
 }
