@@ -1,0 +1,228 @@
+main{
+    display: flex;
+}
+body{
+    background: url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#mainboardPhoto{
+    width: 800px;
+}
+#mainboardlegend{
+    width: auto;
+    color: yellowgreen;
+    font-size: x-large;
+}
+#mainboard{
+    background: url("../img/mainboard.png");
+    width:1000px;
+    height:1000px;
+    background-size: 100% 100%;
+    transform: rotate3d(2, -1, -1, -0.1turn);
+    z-index: -100;
+}
+#mainboard:hover{
+    animation-name: mainboard;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes mainboard {
+    0% {position: relative; top: 0}
+    50% {position: relative; top: 30px}
+    100% {position: relative; top: 0}
+}
+#mainboardPhoto{
+    width:910px;
+    border-right: 5px solid darkslateblue;
+    padding: 0 10px;
+
+}
+#cpuInfo,
+#pciInfo,
+#ramInfo,
+#m2Info,
+#audioInfo,
+#sataInfo,
+#epsInfo,
+#usbInfo,
+#lanInfo,
+#chipInfo{
+
+    background-position: center;
+    padding: 10px;
+    width: 80%;
+    height: 400px;
+    color: white;
+    text-shadow: black 2px 2px 5px;
+    font-size: 1.2em;
+    z-index: -120;
+    border-radius: 40px;
+    border: 3px solid darkslategray;
+    box-shadow: rgba(0,0,0,0.5) 10px 10px 5px;
+    background-size: cover;
+    background-position: center;
+}
+#cpuInfo{
+    background-image: url("../img/cpu.jpg");
+}
+#pciInfo{
+    background-image: url("../img/PCIE.jpg");
+}
+#ramInfo{
+    background-image: url("../img/ram.jpg");
+}
+
+#m2Info{
+    background-image: url("../img/m2.jpg");
+}
+
+#audioInfo{
+    background-image: url("../img/audio.png");
+}
+
+#sataInfo {
+    background-image: url("../img/sata.jpg");
+}
+
+#epsInfo{
+     background-image: url("../img/eps.png");
+ }
+
+#usbInfo{
+     background-image: url("../img/usb.jpg");
+ }
+
+#lanInfo{
+    background-image: url("../img/lan.png");
+}
+
+#chipInfo{
+    background-image: url("../img/asusek.jpeg");
+}
+
+
+
+#cpu, #ram, #pcie, #m2, #sata, #eps, #usb, #Audio, #LAN, #chipset{
+    background-image: url("../img/kropencjusa.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 340px;
+    left: 525px;
+}
+.fas{
+    animation-name: iconAnim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes  iconAnim{
+    0% {color: darkblue;}
+    20% {color:aqua;}
+    50% {color: chartreuse;}
+    70% {color: crimson;}
+    100% {color: darkmagenta;}
+}
+
+
+
+#ram {
+    top: 218px;
+    left: 735px;
+}
+#pcie {
+    top: 600px;
+    left: 390px;
+}
+#m2 {
+    top: 520px;
+    left: 450px;
+}
+#sata {
+    top: 640px;
+    left: 855px;
+}
+#eps {
+    top: 122px;
+    left: 280px;
+}
+#usb {
+    top: 200px;
+    left: 150px;
+}
+#Audio {
+    top: 700px;
+    left: 180px;
+}
+#LAN {
+    top: 300px;
+    left: 170px;
+}
+#chipset {
+    top: 700px;
+    left: 715px;
+}
+
+#cpu tooltip,
+#ram tooltip,
+#pcie tooltip,
+#m2 tooltip,
+#chipset tooltip,
+#LAN tooltip,
+#Audio tooltip,
+#usb tooltip,
+#eps tooltip,
+#sata tooltip{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+#cpu .tooltiptext,
+#ram .tooltiptext,
+#pcie .tooltiptext,
+#m2 .tooltiptext,
+#chipset .tooltiptext,
+#LAN .tooltiptext,
+#Audio .tooltiptext,
+#usb .tooltiptext,
+#eps .tooltiptext,
+#sata .tooltiptext{
+    visibility: hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+}
+
+#cpu:hover .tooltiptext,
+#ram:hover .tooltiptext,
+#pcie:hover .tooltiptext,
+#m2:hover .tooltiptext,
+#sata:hover .tooltiptext,
+#chipset:hover .tooltiptext,
+#LAN:hover .tooltiptext,
+#Audio:hover .tooltiptext,
+#usb:hover .tooltiptext,
+#eps:hover .tooltiptext{
+    visibility: visible;
+}
+.tooltiptext img{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 5px;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

@@ -1,0 +1,23 @@
+body {
+    background: url("../img/weas.jpg") no-repeat fixed center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#select{
+    font-size: 60px;
+    color: white;
+}
+#summaryComp{
+    color: white;
+    font-size: 30px;
+    border-top:4px solid royalblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+}
+
+select#mb, select#gpu, select#cpu {
+    font-size: 0.5em;
+}
