@@ -53,7 +53,8 @@ let cpu = [
         id: 1,
         name: "Intel i-7 2400k",
         price: 1600,
-        Socket: 827
+        Socket: 827,
+        img: "i7.jpg"
     },
     {
         id: 2,
@@ -131,6 +132,7 @@ var cart = [
         name:'cpu',
         price:'0',
         Socket: '0'
+
     },
 
     {
@@ -167,7 +169,7 @@ function  addOpt(elem, optValue, textOpt) {
 function SelectedItemValue(SelectId){
     const selectedItem = document.getElementById(SelectId)
     let strAtt = selectedItem.options[selectedItem.selectedIndex].getAttribute("value");
-    console.log("Wybrany element ma ID"+strAtt);
+    console.log("Wybrany element ma ID:"+strAtt);
 
     const summaryCpu = document.getElementById("summaryCpu");
     const summaryMb = document.getElementById("summaryMb");
@@ -177,36 +179,36 @@ function SelectedItemValue(SelectId){
     const summaryPower = document. getElementById("summaryCase");
 
     if (SelectId == "cpu") {
-        summaryCpu.innerHTML = cpu[strAtt - 1].name + " " + cpu[strAtt - 1].price + "zł" + " " + "Socket:" + " " + cpu[strAtt - 1].Socket
+        summaryCpu.innerHTML = "<td><img src='img/'"+cpu[strAtt -1].img+"'></td>"+"<td>"+cpu[strAtt -1].name + "</td><td> <td>Socket: " +cpu[strAtt - 1].Socket + "</td><td>Cena: " + cpu[strAtt - 1].price + "zł" + "</td>"
         cart[1].price = cpu[strAtt - 1].price
         cart[1].name = cpu[strAtt - 1].name
         cart[1].Socket = cpu[strAtt - 1].Socket
     }
     else if (SelectId == "mb") {
-        summaryMb.innerHTML = mb[strAtt - 1].name + " " + mb[strAtt - 1].price + "zł"
+        summaryMb.innerHTML = "<td>"+ mb[strAtt - 1].name + "</td><td>Cena: " + mb[strAtt - 1].price + "zł" + "</td>"
         cart[0].price = mb[strAtt - 1].price
         cart[0].name = mb[strAtt - 1].name
-        document.getElementById("summaryMainboard").innerHTML="mainboard:"+cart[0].name+" "+cart[0].price
+
     }
     else if (SelectId == "gpu"){
-        summaryGpu.innerHTML = gfx[strAtt - 1].name + " " + gfx[strAtt - 1].price + "zł"
+        summaryGpu.innerHTML = "<td>"+ gfx[strAtt - 1].name + "</td><td>Cena: " + gfx[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = gfx[strAtt - 1].price
         cart[2].name = gfx[strAtt - 1].name
     }
     else if (SelectId == "Ram"){
-        summaryRam.innerHTML = Ram[strAtt - 1].name + " " + Ram[strAtt - 1].price + "zł"
+        summaryRam.innerHTML = "<td>"+ Ram[strAtt - 1].name + "</td><td>Cena: " + Ram[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Ram[strAtt - 1].price
         cart[2].name = Ram[strAtt - 1].name
     }
 
     else if (SelectId == "Case"){
-        summaryCase.innerHTML = Case[strAtt - 1].name + " " + Case[strAtt - 1].price + "zł"
+        summaryCase.innerHTML = "<td>"+ Case[strAtt - 1].name + "</td><td>Cena: " + Case[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Case[strAtt - 1].price
         cart[2].name = Case[strAtt - 1].name
     }
 
     else if (SelectId == "Power"){
-        summaryPower.innerHTML = Power[strAtt - 1].name + " " + Power[strAtt - 1].price + "zł"
+        summaryPower.innerHTML = "<td>"+ Power[strAtt - 1].name + "</td><td>Cena: " + Power[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Power[strAtt - 1].price
         cart[2].name = Power[strAtt - 1].name
     }
@@ -246,5 +248,9 @@ for (let i=0; i< Case.length; i++){
     addOpt("Case", Case[i].id, Case[i].name)
 
 }
+
+//Socket: " +cpu[strAtt - 1].Socket + "</td><td>Cena: " + cpu[strAtt - 1].price + "zł" + "</td>"
+
+//Socket: '0' ,
 
 
