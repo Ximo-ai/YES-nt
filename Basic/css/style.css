@@ -30,3 +30,10 @@ body {
 select#mb, select#gpu, select#cpu, select#Ram, select#Case, select#Power {
     font-size: 0.5em;
 }
+#summaryComp img {
+    width: 100px;
+    height: auto;
+}
+#sumAll{
+    font-size: 30px;
+}

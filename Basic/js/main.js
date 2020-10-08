@@ -6,26 +6,31 @@ let gfx = [
         id: 1,
         name: "Gigabyte GeForce GTX 1660 OC 6GB GDDR5 ",
         price: 939,
+        img: "gtx1660.jpg"
     },
     {
         id: 2,
         name: "Gigabyte Radeon RX 5600 XT Gaming OC 6GB GDDR6 ",
         price: 1349,
+        img: "5600xt.jpg"
     },
     {
         id: 3,
         name: "MSI GeForce RTX 2070 SUPER Gaming X 8GB GDDR6",
         price: 1799,
+        img: "2070.png"
     },
     {
         id: 4,
         name: "Gigabyte GeForce GT 1030 OC 2GB GDDR5",
         price: 394.29,
+        img: "1030.jpg"
     },
     {
         id: 5,
         name: "Turbo Bite 1927437",
         price: 21.37,
+        img: "turbo.jpg"
     },
 ]
 
@@ -34,17 +39,20 @@ let mb = [
     {
         id: 1,
         name: "Dobra płyta TYSIONC",
-        price: 929
+        price: 929,
+        img: "mother.jpg"
     },
     {
         id: 2,
         name: "Średnia Płyta ECO Bubble",
-        price: 699
+        price: 699,
+        img: "mother2.jpg"
     },
     {
         id: 3,
         name: "Słaba Płyta A+++",
-        price: 1359
+        price: 1359,
+        img: "mother3.jpg"
     },
 ]
 
@@ -60,13 +68,15 @@ let cpu = [
         id: 2,
         name: "Intel Ryzen 5",
         price: 399,
-        Socket: 997
+        Socket: 997,
+        img: "Ryzen.jpg"
     },
     {
         id: 3,
         name: "Bosch core t-0",
         price: 8973,
-        Socket: 2137
+        Socket: 2137,
+        img: "Bosch.jpg"
     },
 ]
 
@@ -74,17 +84,20 @@ let Ram = [
     {
         id: 1,
         name: "Corsair Vengeance RGB Pro 32GB (2x16GB) DDR4 3200",
-        price: 134.80
+        price: 134.80,
+        img: "corsair.jpg"
     },
     {
         id: 2,
         name: "Crucial 16GB Kit (8GBx2) DDR3/DDR3L 1600 MT/S",
-        price: 300
+        price: 300,
+        img: "crucial.jpg"
     },
     {
         id: 3,
         name: "Corsair Vengeance RGB PRO 32GB (2x16GB) DDR4 3200",
-        price: 20.13
+        price: 20.13,
+        img: "corsairlpx.jpeg"
     },
 ]
 
@@ -92,17 +105,20 @@ let Power = [
     {
         id: 1,
         name: "SeaSonic Focus GX-550W (FOCUS-GX-550)",
-        price: 635.80
+        price: 635.80,
+        img: "sea.jpg"
     },
     {
         id: 2,
         name: "Corsair TXM 850W (CP-9020130-EU)",
-        price: 128
+        price: 128,
+        img: "txm.jpeg"
     },
     {
         id: 3,
         name: "Corsair RM650x 650W (CP-9020178-EU)",
-        price: 2137
+        price: 2137,
+        img: "rm.png"
     },
 ]
 
@@ -110,17 +126,20 @@ let Case = [
     {
         id: 1,
         name: "Obudowa be quiet! DArk Bas Pro 900 V2 (BGW15)",
-        price: 1288.23
+        price: 1288.23,
+        img: "bequiet.jpeg"
     },
     {
         id: 2,
         name: "Obudowa Asus ROG Strix Helios GX601 (90DC0020-B39000)",
-        price: 1674.23
+        price: 1674.23,
+        img: "helios.png"
     },
     {
         id: 3,
         name: "Obudowa Thermaltake Core P5 Tempered Glass Edition",
-        price: 2178436.67
+        price: 2178436.67,
+        img: "core.jpg"
     },
 ]
 var cart = [
@@ -179,36 +198,36 @@ function SelectedItemValue(SelectId){
     const summaryPower = document. getElementById("summaryCase");
 
     if (SelectId == "cpu") {
-        summaryCpu.innerHTML = "<td><img src='img/'"+cpu[strAtt -1].img+"'></td>"+"<td>"+cpu[strAtt -1].name + "</td><td> <td>Socket: " +cpu[strAtt - 1].Socket + "</td><td>Cena: " + cpu[strAtt - 1].price + "zł" + "</td>"
+        summaryCpu.innerHTML = "<td><img src='img/"+cpu[strAtt -1].img+"'></td>"+"<td>"+cpu[strAtt -1].name + "<td>Socket: " +cpu[strAtt - 1].Socket + "</td><td>Cena: " + cpu[strAtt - 1].price + "zł" + "</td>"
         cart[1].price = cpu[strAtt - 1].price
         cart[1].name = cpu[strAtt - 1].name
         cart[1].Socket = cpu[strAtt - 1].Socket
     }
     else if (SelectId == "mb") {
-        summaryMb.innerHTML = "<td>"+ mb[strAtt - 1].name + "</td><td>Cena: " + mb[strAtt - 1].price + "zł" + "</td>"
+        summaryMb.innerHTML = "<td><img src='img/"+mb[strAtt -1].img+"'></td>"+ "<td>"+ mb[strAtt - 1].name + "</td><td>Cena: " + mb[strAtt - 1].price + "zł" + "</td>"
         cart[0].price = mb[strAtt - 1].price
         cart[0].name = mb[strAtt - 1].name
 
     }
     else if (SelectId == "gpu"){
-        summaryGpu.innerHTML = "<td>"+ gfx[strAtt - 1].name + "</td><td>Cena: " + gfx[strAtt - 1].price + "zł"+"</td>"
+        summaryGpu.innerHTML = "<td><img src='img/"+gfx[strAtt -1].img+"'></td>"+ "<td>"+ gfx[strAtt - 1].name + "</td><td>Cena: " + gfx[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = gfx[strAtt - 1].price
         cart[2].name = gfx[strAtt - 1].name
     }
     else if (SelectId == "Ram"){
-        summaryRam.innerHTML = "<td>"+ Ram[strAtt - 1].name + "</td><td>Cena: " + Ram[strAtt - 1].price + "zł"+"</td>"
+        summaryRam.innerHTML = "<td><img src='img/"+Ram[strAtt -1].img+"'></td>"+ "<td>"+ Ram[strAtt - 1].name + "</td><td>Cena: " + Ram[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Ram[strAtt - 1].price
         cart[2].name = Ram[strAtt - 1].name
     }
 
     else if (SelectId == "Case"){
-        summaryCase.innerHTML = "<td>"+ Case[strAtt - 1].name + "</td><td>Cena: " + Case[strAtt - 1].price + "zł"+"</td>"
+        summaryCase.innerHTML = "<td><img src='img/"+Case[strAtt -1].img+"'></td>"+ "<td>"+ Case[strAtt - 1].name + "</td><td>Cena: " + Case[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Case[strAtt - 1].price
         cart[2].name = Case[strAtt - 1].name
     }
 
     else if (SelectId == "Power"){
-        summaryPower.innerHTML = "<td>"+ Power[strAtt - 1].name + "</td><td>Cena: " + Power[strAtt - 1].price + "zł"+"</td>"
+        summaryPower.innerHTML = "<td><img src='img/"+Power[strAtt -1].img+"'></td>"+ "<td>"+ Power[strAtt - 1].name + "</td><td>Cena: " + Power[strAtt - 1].price + "zł"+"</td>"
         cart[2].price = Power[strAtt - 1].price
         cart[2].name = Power[strAtt - 1].name
     }
