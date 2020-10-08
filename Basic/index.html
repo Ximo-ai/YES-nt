@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
 <main>
+
+    <div>
+    <p>Wszystko w najlepszych cenach, Kupuj tylko u nas</p>
+    </div>
+
     <section id="select">
         <table>
             <tr>
@@ -57,6 +63,14 @@
                     </select>
                 </td>
             </tr>
+
+            <tr>
+                <td>Dyski</td>
+                <td>
+                    <select name="Strg" id="Strg" onchange="SelectedItemValue('Strg')">
+                    </select>
+                </td>
+            </tr>
         </table>
 
 
@@ -70,6 +84,7 @@
         <tr id="summaryRam"></tr>
         <tr id="summaryCase"></tr>
         <tr id="summaryPower"></tr>
+        <tr id="summaryStorage"></tr>
 
 
     </table>
