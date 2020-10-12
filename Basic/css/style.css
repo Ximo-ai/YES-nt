@@ -11,15 +11,32 @@ body {
 }
 #summaryComp{
     color: white;
-    font-size: 30px;
-    border-top:4px solid royalblue;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 80%;
 
-
-
 }
+table#summaryComp{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+table#summaryComp td{
+    text-align: center;
+}
+table#summaryComp td:nth-child(1){
+    width: 20%;
+}
+table#summaryComp td:nth-child(2){
+    width: 50%;
+}
+table#summaryComp td:nth-child(3){
+    width: 10%;
+}
+table#summaryComp td:nth-child(4){
+    width: 20%;
+}
+
 #summaryComp, #summaryComp td{
     border: 1px solid white;
     border-collapse: collapse;
