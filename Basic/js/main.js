@@ -164,6 +164,90 @@ let Strg = [
     },
 ]
 
+let Brk = [
+    {
+        id: 1,
+        name: "Biurko PRO-GAMER D-3000",
+        price: 649,
+        img: "stol1.jpg"
+    },
+    {
+        id: 2,
+        name: "Biurko Ultradesk Frag",
+        price: 599,
+        img: "Stol2.jpg"
+    },
+    {
+        id: 3,
+        name: "Biurko Ultradesk Grand",
+        price: 799,
+        img: "Stol3.jpg"
+    },
+]
+
+let Ldo = [
+    {
+        id: 1,
+        name: "Samsung Family Hub RF56N9740SG",
+        price: 15999,
+        img: "Lodowka1.jpg"
+    },
+    {
+        id: 2,
+        name: "Miele KWNS 28462 E",
+        price: 15799,
+        img: "Lodowka2.jpg"
+    },
+    {
+        id: 3,
+        name: "Samsung Family Hub RF56M9540SR",
+        price: 13499,
+        img: "Lodowka3.jpg"
+    },
+]
+
+let Krz = [
+    {
+        id: 1,
+        name: "Fotel Akracing Master Premium Czarny",
+        price: 1359,
+        img: "fotel2.jpg"
+    },
+    {
+        id: 2,
+        name: "Fotel Genesis Trit 600 RGB",
+        price: 1099,
+        img: "Fotel1.jpg"
+    },
+    {
+        id: 3,
+        name: "Fotel Akracing Office Obsidian Czarny ",
+        price: 1399,
+        img: "Fotel3.jpg"
+    },
+]
+
+let Chl = [
+    {
+        id: 1,
+        name: "Chłodzenie CPU be quiet! Dark Rock 4",
+        price: 285,
+        img: "Chl1.jpg"
+    },
+    {
+        id: 2,
+        name: "Chłodzenie CPU SilentiumPC Fortis 3",
+        price: 155,
+        img: "Chl2.jpg"
+    },
+    {
+        id: 3,
+        name: "Chłodzenie CPU be quiet! Dark Rock 4 Pro",
+        price: 422.80,
+        img: "Chl3.jpg"
+    },
+]
+
 var cart = [
     {
         name: 'mainboard',
@@ -173,7 +257,6 @@ var cart = [
         name:'cpu',
         price:'0',
         Socket: '0'
-
     },
 
     {
@@ -196,6 +279,28 @@ var cart = [
         price:'0'
     },
 
+    {
+        name:'Brk',
+        price:'0'
+    },
+
+    {
+        name:'Krz',
+        price:'0'
+    },
+
+    {
+        name:'Ldo',
+        price:'0'
+    },
+
+    {
+        name:'Chl',
+        price:'0'
+    },
+
+
+
 ]
 
 function  addOpt(elem, optValue, textOpt) {
@@ -212,7 +317,7 @@ function SelectedItemValue(SelectId){
     let strAtt = selectedItem.options[selectedItem.selectedIndex].getAttribute("value");
     console.log("Wybrany element ma ID:"+strAtt);
 
-    document.getElementById("sumAll").innerHTML= "<b>Suma Koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price)
+    document.getElementById("sumAll").innerHTML= "<b>Suma Koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price+cart[6].price+cart[7].price+cart[8].price+cart[9].price)
     function sumCart(cart){
         console.log("Ilość elementów w Koszyku:"+cart.length)
         let cena = 0;
@@ -228,8 +333,13 @@ function SelectedItemValue(SelectId){
     const summaryMb = document.getElementById("summaryMb");
     const summaryGpu = document. getElementById("summaryGpu");
     const summaryRam = document. getElementById("summaryRam");
-    const summaryCase = document. getElementById("summaryPower");
-    const summaryPower = document. getElementById("summaryCase");
+    const summaryCase = document. getElementById("summaryCase");
+    const summaryPower = document. getElementById("summaryPower");
+    const summaryLdo = document. getElementById("summaryLdo");
+    const summaryBrk = document. getElementById("summaryBrk");
+    const summaryKrz = document. getElementById("summaryKrz");
+    const summaryStrg = document. getElementById("summaryStrg");
+    const summaryChl = document. getElementById("summaryChl");
 
     if (SelectId == "cpu") {
         summaryCpu.innerHTML = "<td><img src='img/"+cpu[strAtt -1].img+"'></td>"+"<td>"+cpu[strAtt -1].name + "<td>Socket: " +cpu[strAtt - 1].Socket + "</td><td>Cena: " + cpu[strAtt - 1].price + "zł" + "</td>"
@@ -261,15 +371,39 @@ function SelectedItemValue(SelectId){
     }
 
     else if (SelectId == "Strg"){
-        summaryCase.innerHTML = "<td><img src='img/"+Strg[strAtt -1].img+"'></td>"+ "<td>"+ Strg[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Strg[strAtt - 1].price + "zł"+"</td>"
-        cart[4].price = Strg[strAtt - 1].price
-        cart[4].name = Strg[strAtt - 1].name
+        summaryStrg.innerHTML = "<td><img src='img/"+Strg[strAtt -1].img+"'></td>"+ "<td>"+ Strg[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Strg[strAtt - 1].price + "zł"+"</td>"
+        cart[5].price = Strg[strAtt - 1].price
+        cart[5].name = Strg[strAtt - 1].name
     }
 
     else if (SelectId == "Power"){
         summaryPower.innerHTML = "<td><img src='img/"+Power[strAtt -1].img+"'></td>"+ "<td>"+ Power[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Power[strAtt - 1].price + "zł"+"</td>"
-        cart[5].price = Power[strAtt - 1].price
-        cart[5].name = Power[strAtt - 1].name
+        cart[6].price = Power[strAtt - 1].price
+        cart[6].name = Power[strAtt - 1].name
+    }
+
+    else if (SelectId == "Brk"){
+        summaryBrk.innerHTML = "<td><img src='img/"+Brk[strAtt -1].img+"'></td>"+ "<td>"+ Brk[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Brk[strAtt - 1].price + "zł"+"</td>"
+        cart[7].price = Brk[strAtt - 1].price
+        cart[7].name = Brk[strAtt - 1].name
+    }
+
+    else if (SelectId == "Krz"){
+        summaryKrz.innerHTML = "<td><img src='img/"+Krz[strAtt -1].img+"'></td>"+ "<td>"+ Krz[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Krz[strAtt - 1].price + "zł"+"</td>"
+        cart[8].price = Krz[strAtt - 1].price
+        cart[8].name = Krz[strAtt - 1].name
+    }
+
+    else if (SelectId == "Ldo"){
+        summaryLdo.innerHTML = "<td><img src='img/"+Ldo[strAtt -1].img+"'></td>"+ "<td>"+ Ldo[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Ldo[strAtt - 1].price + "zł"+"</td>"
+        cart[9].price = Ldo[strAtt - 1].price
+        cart[9].name = Ldo[strAtt - 1].name
+    }
+
+    else if (SelectId == "Chl"){
+        summaryChl.innerHTML = "<td><img src='img/"+Chl[strAtt -1].img+"'></td>"+ "<td>"+ Chl[strAtt - 1].name + "<td></td>" + "</td><td>Cena: " + Chl[strAtt - 1].price + "zł"+"</td>"
+        cart[10].price = Chl[strAtt - 1].price
+        cart[10].name = Chl[strAtt - 1].name
     }
     else
     {}
@@ -310,6 +444,26 @@ for (let i=0; i< Case.length; i++){
 
 for (let i=0; i< Strg.length; i++){
     addOpt("Strg", Strg[i].id, Strg[i].name)
+
+}
+
+for (let i=0; i< Brk.length; i++){
+    addOpt("Brk", Brk[i].id, Brk[i].name)
+
+}
+
+for (let i=0; i< Krz.length; i++){
+    addOpt("Krz", Krz[i].id, Krz[i].name)
+
+}
+
+for (let i=0; i< Ldo.length; i++){
+    addOpt("Ldo", Ldo[i].id, Ldo[i].name)
+
+}
+
+for (let i=0; i< Chl.length; i++){
+    addOpt("Chl", Chl[i].id, Chl[i].name)
 
 }
 

@@ -28,7 +28,7 @@ body {
 
 }
 
-select#mb, select#gpu, select#cpu, select#Ram, select#Case, select#Power, select#Strg {
+select#mb, select#gpu, select#cpu, select#Ram, select#Case, select#Power, select#Strg, select#Brk, select#Krz, select#Ldo, select#Chl {
     font-size: 0.5em;
 }
 #summaryComp img {
